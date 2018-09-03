@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --main-blue: linear-gradient(to right, #38afff , #2b93ff);
+  --dark-blue: #2a55c9;
+  --light-blue: #45a0d5;
+}
+
+/* this is an example on how you can call them in you css ...
+var (linear-gradient(to right, #38afff , #2b93ff);) */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color:  linear-gradient(to right, #38afff , #2b93ff);
+}
