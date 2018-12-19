@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Tweet from './Tweet';
+import Post from './TweetPosts/Post/Post';
+import moment from 'moment'
+
 
 const TweetsFormWrapper = styled.div`
 input[type="text"], textarea {
@@ -35,32 +38,39 @@ input[type="text"], textarea {
 
 `
 
+// let randomImageIndex = Math.floor(Math.random() * numImagesAvailable);
+
 class TweetsForm extends Component {
   state = {
     items: [],
-    currentItem: { name: '', tweet: '', key: Date.now() }
+    currentItem: { name: '', tweet: '', key: "" },
+    timeStamp: moment().format('MMMM Do YYYY'),
+    randomIndex: ''
   }
 
   handleInput = (name, e) => {
     const currentItem = { ...this.state.currentItem };
     currentItem[name] = e.target.value;
+
     this.setState({ currentItem });
   }
 
   addItem = (e) => {
     e.preventDefault();
+    const randomIndex = Math.floor(Math.random() * 6);
     const newItem = this.state.currentItem;
     if (newItem.name === '' || newItem.tweet === '') return;
-    //we do not want to add empty value to to our tweet, we check for that. If it’s not empty, items array is destructured and newItem is added. both has to be true
     if (newItem.name !== '' && newItem.tweet !== '') {
       const items = [...this.state.items, newItem]
       this.setState({
         items,
-        currentItem: { name: '', tweet: '', key: '' }
+        currentItem: { name: '', tweet: '', key: moment().format('MMMM Do YYYY, h:mm:ss a') },
+        randomIndex
       });
     }
-    //  console.log(this.state.currentItem)
-    //    console.log(this.state.items)
+
+    console.log(this.state.currentItem)
+    console.log(this.state.items)
   }
 
 
@@ -73,17 +83,27 @@ class TweetsForm extends Component {
     })
   }
 
+
+
   render() {
     const {
       currentItem: { name, tweet },
-      items
+      items,
+      timeStamp,
+      randomIndex
     } = this.state;
+
+    //random images post
+    const imgArr = ['mikko', 'miranda', 'pogi', 'best', 'react', 'developer'];
+    const randomImages = imgArr[randomIndex]
 
     const tweetPost = items.map((item, i) => (
       <Tweet
         deleteItem={this.deleteItem}
         item={item}
         key={i}
+        timeStamp={timeStamp}
+        randomImages={randomImages}
       />
     ))
     return (
@@ -112,6 +132,10 @@ class TweetsForm extends Component {
         </form>
         <h1>Tweet posts</h1>
         {tweetPost}
+        <Post />
+        <Post />
+        <Post />
+        <Post />
         <hr />
       </TweetsFormWrapper >
     );
