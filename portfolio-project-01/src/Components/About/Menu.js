@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 import menuLogo from '../../assets/home/menu_logo.png';
 import buttonLine from '../../assets/home/button_line.png';
+import Steak from '../Foods/Steak';
+import Drinks from '../Foods/Drinks';
+import Desserts from '../Foods/Desserts';
 
 const MenuWrapper = styled.div`
   .menu__logo { 
@@ -110,93 +113,6 @@ const MenuWrapper = styled.div`
   }
 
 `
-
-const primesteak = [
-  {
-    caption: 'FILET',
-    ingredients: "7 oz. Center Cut10 oz. Double cut",
-    price: "$14.49"
-  },
-  {
-    caption: 'BOINE IN FILET',
-    ingredients: "10 oz Greg Norman Ranch, Australia",
-    price: "$20.50"
-  },
-  {
-    caption: 'NEW YORK STRIP',
-    ingredients: "9 oz. Center Cut12 oz. Double cut oz",
-    price: "$9.99"
-  },
-  {
-    caption: 'PORTERHOUSE',
-    ingredients: "7 oz. Center Cut10 oz. Double cut",
-    price: "$7.99"
-  },
-  {
-    caption: 'DELMONICO',
-    ingredients: "10 oz Greg Norman Ranch, Australia",
-    price: "$17.99"
-  },
-]
-
-const drinkMenu = [
-  {
-    caption: 'RAIMAT ABADIA',
-    ingredients: "Complex, Dark Cherry, Spice, bodied",
-    price: "$8.50"
-  },
-  {
-    caption: 'EDEN CHARDONNAY',
-    ingredients: "Elegant, Lemon, Vanilla, bodied",
-    price: "$15.50"
-  },
-  {
-    caption: 'MAILLY BRUT RESERVA',
-    ingredients: "Dry, Toast, Citrus, Medium-bodied",
-    price: "$17.50"
-  },
-  {
-    caption: 'LEON V DE ARMENIA',
-    ingredients: "Crisp, Citrus, Full-bodied",
-    price: "$12.50"
-  },
-  {
-    caption: 'CABERENET SAUVIGNON',
-    ingredients: "Intense, Cherry, Chocolate, Full-bodied",
-    price: "$30.50"
-  },
-]
-
-const desserts = [
-  {
-    caption: 'CREME BRULEE',
-    ingredients: "Creme Anglaise, Vanilla Bean Ice Cream",
-    price: "$7.49"
-  },
-  {
-    caption: 'WARM CHOCOLATE ',
-    ingredients: "Amarena Cherries, Kirsch Cream",
-    price: "$6.50"
-  },
-  {
-    caption: 'CHEESE CAKE',
-    ingredients: "Cheese creme, ice cream, strawberry",
-    price: "$4.50"
-  },
-  {
-    caption: 'APPLE TURNOVER',
-    ingredients: "Creme Anglaise, Vanilla Bean Ice Cream",
-    price: "$7.99"
-  },
-  {
-    caption: 'SORBET WITH FRUIT',
-    ingredients: "Lemon, organge, strawberry or mango",
-    price: "$8.50"
-  },
-]
-
-
-
 class Menu extends Component {
   state = {}
   render() {
@@ -207,53 +123,15 @@ class Menu extends Component {
           <div className="menu__flex">
             <div className="menu__item menu__title">
               <h3>prime steaks</h3>
-              {
-                primesteak.map(({ caption, ingredients, price }, index) => (
-                  <div className="items" key={index}>
-                    <h3 className="menu__caption">
-                      {caption}
-                    </h3>
-                    <div className="menu__item__flex">
-                      <div className="menu__ingredients"><span>{ingredients}</span></div>
-                      <p className="menu__price">{price}</p>
-                    </div>
-                  </div>
-                ))
-              }
-
+              <Steak />
             </div>
             <div className="menu__item menu__title">
               <h3>drinks & wines</h3>
-              {
-                drinkMenu.map(({ caption, ingredients, price }, index) => (
-                  <div className="items" key={index}>
-                    <h3 className="menu__caption">
-                      {caption}
-                    </h3>
-                    <div className="menu__item__flex">
-                      <div className="menu__ingredients">{ingredients}</div>
-                      <p className="menu__price">{price}</p>
-                    </div>
-                  </div>
-                ))
-              }
-
+              <Drinks />
             </div>
             <div className="menu__item menu__title">
               <h3>desserts</h3>
-              {
-                desserts.map(({ caption, ingredients, price }, index) => (
-                  <div className="items" key={index}>
-                    <h3 className="menu__caption">
-                      {caption}
-                    </h3>
-                    <div className="menu__item__flex">
-                      <div className="menu__ingredients">{ingredients}</div>
-                      <p className="menu__price">{price}</p>
-                    </div>
-                  </div>
-                ))
-              }
+              <Desserts />
             </div>
           </div>
           <div className="menu__button"><a href="...">view complete menu</a></div>

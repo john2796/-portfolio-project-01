@@ -7,18 +7,12 @@ import headerDecorator from '../../assets/home/header_decorator.png'
 import ornament from '../../assets/home/ornament.png'
 import AboutCarousel from './AboutCarousel';
 import KitchenCarousel from './KitchenCarousel';
-import ReservationParallax from './ReservationParallax';
-import Menu from './Menu';
-import Testimonials from './Testimonials';
-import Contact from './Contact';
-import MapContainer from './MapContainer';
-
 
 
 
 const AboutUsWrapper = styled.section`
-margin-top: 958px;
 .about__title { 
+  margin-top: 120px;
   &::before, &::after { 
     content: url(${headerDecorator});
     margin: 14px;
@@ -67,6 +61,8 @@ margin-top: 958px;
       width: 70%;
     }
   }
+  
+
 `
 
 
@@ -79,7 +75,6 @@ class AboutUs extends Component {
   render() {
     return (
       <React.Fragment>
-
         {/* // About US */}
         <AboutUsWrapper id="about" >
           <h2 className="about__title">About Us</h2>
@@ -114,24 +109,6 @@ class AboutUs extends Component {
 
             {/* Wrapper ends here */}
           </div>
-          {/* Reservation parallax */}
-          <section className="reservation__overlay">
-            <ReservationParallax />
-          </section>
-          {/* Menu */}
-          <section>
-            <Menu />
-          </section>
-          {/* Testimonials */}
-          <section>
-            <Testimonials />
-          </section>
-          <section>
-            <Contact />
-          </section>
-          <section>
-            <MapContainer />
-          </section>
         </AboutUsWrapper>
       </React.Fragment>
     );

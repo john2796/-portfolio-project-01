@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import Routes from './Container/Routes/Routes';
+import Navigation from './Navigation/Navigation';
+import Main from './Main/Main';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Routes />
+        <Navigation />
+        <Main />
       </div>
     );
   }

@@ -8,7 +8,6 @@ const HeaderMainStyle = styled.section`
 position: absolute;
 height: 100vh;
 top: 0;
-border: 1px solid red;
   img { 
     width: 100vw;
     object-fit:cover;

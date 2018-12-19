@@ -149,6 +149,11 @@ section {
   display: block;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   line-height: 1;
 }
@@ -264,8 +269,6 @@ img {
   max-width: 1168px;
   width: 95%;
   margin: 0 auto;
-  border: 1px solid red;
-
 }
 
 /* Global repeating class */
