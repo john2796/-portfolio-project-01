@@ -6,6 +6,7 @@ import LatestRightCard from "./LatestRightCard";
 import OurListingCard from "./OurListingCard";
 import SocialLinksCard from "./SocialLinksCard";
 import SearchCard from "./SearchCard";
+import MorgageCalculator from "./MorgageCalculator";
 
 const SinglePageRightStyle = styled.div`
   max-width: 90%;
@@ -34,7 +35,9 @@ class SinglePageRight extends Component {
         {/* advanced-search */}
         <SearchCard />
         {/* latest-listing card */}
+        <LatestRightCard />
         {/* mortgage calculator */}
+        <MorgageCalculator />
       </SinglePageRightStyle>
     );
   }
