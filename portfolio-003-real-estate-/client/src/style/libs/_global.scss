@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600&subset=devanagari");
+
+html,
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.main-subtitle {
+  font-weight: bold;
+  color: #303030;
+  padding-top: 41px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 38px;
+  font-family: "Poppins";
+}
+
+.secondary-btn {
+  cursor: pointer;
+  height: 45px;
+  width: 205px;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  background-color: $yellow;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: 500;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  border: none;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  &:hover {
+    background: $black;
+  }
+}
+input[type="search"] {
+  -webkit-appearance: none;
+}

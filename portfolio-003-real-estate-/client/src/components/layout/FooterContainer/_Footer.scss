@@ -1,0 +1,104 @@
+.footer {
+  background: $footergray;
+}
+
+.footer-flexparent {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 60px;
+  @include lg {
+    flex-direction: column;
+    margin-left: 20px;
+  } // Tablets and small desktops 992px;
+
+  p {
+    color: $footerptag;
+  }
+  .footer-item {
+    margin: 0 20px;
+    max-width: 240px;
+    min-width: 240px;
+    @include xl {
+      margin: 0;
+    } // Large tablets and desktops 1200px;
+    @include lg {
+      max-width: 100%;
+    } // Tablets and small desktops 992px;
+    a {
+      color: $footerptag;
+      &:hover {
+        color: $yellow;
+      }
+    }
+    p {
+      color: $footerptag;
+      font-size: 1.3rem;
+      i {
+        margin-right: 13px;
+      }
+    }
+    .footer-item-title {
+      color: $white;
+      padding: 50px 0 20px 0;
+      text-transform: uppercase;
+    }
+    .item-price {
+      color: $yellow;
+    }
+    .listings-item {
+      display: flex;
+      margin-bottom: 15px;
+      .listing-right-item {
+        margin-left: 8px;
+      }
+    }
+  }
+}
+
+.fa-arrow-right {
+  margin-left: 4px;
+}
+.footer-search {
+  @include lg {
+    width: 95%;
+  }
+  input {
+    width: 100%;
+  }
+  input[type="text"] {
+    font-size: 13px;
+    padding: 9px 0 9px 9px;
+    color: #8593a9;
+    border: 1px solid #dde4e9;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: none;
+    -webkit-appearance: none;
+  }
+  .search-btn {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 100px;
+  }
+}
+
+.footer-buyerchoice {
+  background: #242424;
+  padding: 20px 0 10px 0;
+  nav {
+    padding: 0 70px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    .prvcy {
+      display: flex;
+      .first-ptag {
+        margin-right: 15px;
+      }
+    }
+    font-size: 1.3rem;
+    color: $footerptag;
+  }
+}

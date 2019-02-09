@@ -1,0 +1,290 @@
+.listing-title {
+  font-weight: bold;
+  color: #303030;
+  padding-top: 41px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 38px;
+  font-family: "Poppins";
+}
+
+.current-listing {
+  background-color: $yellow;
+  color: $white;
+}
+
+.listing-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  padding: 20px 0;
+  flex-wrap: wrap;
+  @include sm {
+    flex-direction: column;
+  }
+  h5 {
+    display: block;
+    background: #dedede;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 2px 18px;
+    border-radius: 2px;
+    color: #3a4659;
+    line-height: 1.8;
+    margin: 0 15px 20px;
+    font-size: 13px;
+    transition: all 0.15s ease;
+    @include sm {
+      max-width: 150px;
+      padding: 2px 150px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover {
+      background-color: #77b0cf2b;
+    }
+  }
+}
+.tab {
+  display: none;
+  background: #dedede;
+}
+.active-tab {
+  display: block;
+  color: $white;
+}
+
+.uvc-svg-triangle {
+  background-color: #f7f7f7;
+  margin-bottom: -10px;
+}
+
+.listing-wrapper {
+  background-color: #f7f7f7;
+  padding-bottom: 70px;
+}
+
+.listing-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  @include md {
+    flex-direction: column;
+  }
+}
+
+.card-image {
+  opacity: 1;
+  transform-origin: 50% 50% 0px;
+  transform: scale(1);
+}
+
+.card {
+  max-width: 370px;
+  margin-bottom: 25px;
+  @include xl {
+    max-width: 470px;
+  }
+  @include lg {
+    max-width: 390px;
+  }
+  @include md {
+    max-width: 340px;
+  }
+  @include xm {
+    max-width: 480px;
+  }
+  @include sm {
+    max-width: 90%;
+  }
+}
+.card-title {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin: 8px 0;
+  transition: $main-transition;
+  &:hover {
+    color: $yellow;
+  }
+}
+.card-subtitle {
+  color: $yellow;
+
+  font-size: 18px;
+  margin-top: 5px;
+  line-height: 22px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.card-text {
+  line-height: 1.8em;
+  margin: 10px 0;
+  max-height: 160px;
+  font-size: 1.3rem;
+  color: $lightgray;
+}
+
+.property_listing_details {
+  display: flex;
+  align-items: center;
+  padding: 5px 0 25px 0;
+  .fas,
+  .far {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  span {
+    margin: 0 7px;
+    color: $darkgray;
+  }
+  .infobath_unit_type2 {
+    font-size: 1.2rem;
+  }
+}
+.property-location {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid#eef3f6;
+  padding-top: 22px;
+  justify-content: space-between;
+
+  .property-share {
+    color: $darkgray;
+    font-size: 1.6rem;
+    .fas {
+      &:hover {
+        color: $yellow;
+        transition: $main-transition;
+      }
+    }
+    .fa-plus {
+      margin-left: 15px;
+      margin-right: 17px;
+    }
+  }
+  .property-name {
+    display: flex;
+    align-items: center;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    h5 {
+      margin-left: 10px;
+      font-weight: 600;
+      font-size: 1.4rem;
+      font-family: "Poppins";
+      color: $lightgray;
+      &:hover {
+        color: $yellow;
+        transition: $main-transition;
+      }
+    }
+  }
+}
+.rentals {
+  background-color: $yellow;
+  display: inline-block;
+  text-align: right;
+  color: $white;
+  font-size: 12px;
+
+  color: $white;
+  position: relative;
+  right: 20px;
+  border-radius: 2px;
+  padding: 1px 15px;
+  line-height: 17px;
+  top: 20px;
+  text-align: center;
+}
+
+.carousel-parent {
+  transition: all 0.4s linear;
+  background-position: center;
+  background-size: cover;
+  object-fit: cover;
+  max-height: 250px;
+
+  &:hover {
+    transform: scale(1.1);
+    filter: brightness(80%);
+  }
+}
+.carousel-info {
+  position: absolute;
+  z-index: 999;
+  right: 0;
+}
+.fa-heart {
+  position: absolute;
+  bottom: 0;
+  font-size: 2rem;
+  right: 35px;
+  top: 200px;
+  width: auto;
+  height: auto;
+  padding-top: 0;
+  z-index: 9;
+  color: $white;
+}
+.tooltip {
+  font-size: 1.4rem;
+  color: $white;
+}
+.slide {
+  display: none;
+}
+.active {
+  display: block;
+  overflow: hidden;
+}
+.carousel-controls {
+  position: absolute;
+  top: 105px;
+  right: 25px;
+  .fas {
+    background: transparent;
+    cursor: pointer;
+    font-size: 3rem;
+    color: white;
+  }
+  .fa-chevron-left {
+    right: 294px;
+    position: absolute;
+    @include xl {
+      right: 394px;
+    } // Large tablets and desktops 1200px;
+    @include lg {
+      right: 319px;
+    } // Tablets and small desktops 992px;
+    @include md {
+      right: 284px;
+    } // Small tablets (portrait view) 768px;
+    @include xm {
+      right: 415px;
+    }
+    @include sm {
+      right: 380px;
+    } // Small tablets and large smartphones (landscape view) 576px;
+    @include xs {
+      right: 324px;
+    } // Tiny phones 425px;
+  }
+}
+
+.listing-flexparent {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  border: 1px solid red;
+  margin: 0 auto;
+}

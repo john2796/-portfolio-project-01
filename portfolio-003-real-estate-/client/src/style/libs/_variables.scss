@@ -1,0 +1,130 @@
+/* Example 
+
+$color-red: #FF0000;
+$color-green: #00FF00;
+$color-blue: #0000FF;
+
+how to call it 
+
+h1 { color: $color-red; }
+p { color: $color-green; }
+a { color: $color-blue; }
+*/
+
+$yellow: #fdcc01;
+$white: #ffff;
+$lightgray: #7d7d7d;
+$darkgray: #3e4a5c;
+$main-transition: color 0.4s linear;
+$black: #313234;
+$darkblue: #2b2c2e;
+$footergray: #222222;
+$footerptag: #767676;
+$footersearch: #8593a9;
+$headertab: #2a2a2a;
+$headertabletnav: #24282d;
+$spbg: #f7f7f7;
+$sl-ptag: #6d6d6d;
+$sl-title: #3a4659;
+$sl-items-title: #333e4f;
+$walkscore: #f0f0f0;
+
+// media queries
+// Screen size variables desktop approach
+$screen-xs-max: 450px; // Tiny phones
+$screen-sm-max: 576px; // Small tablets and large smartphones (landscape view)
+$screen-xm-max: 700px; // Small tablets and large smartphones (landscape view)
+$screen-md-max: 768px; // Small tablets (portrait view)
+$screen-lg-max: 992px; // Tablets and small desktops
+$screen-xl-max: 1200px; // Large tablets and desktops
+
+// Mixins
+@mixin xs {
+  @media (max-width: #{$screen-xs-max}) {
+    @content;
+  }
+} // Tiny devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+    @content;
+  }
+} // Small devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+    @content;
+  }
+} // Medium devices
+@mixin xm {
+  @media (max-width: #{$screen-xm-max}) {
+    @content;
+  }
+} // Medium devices
+@mixin lg {
+  @media (max-width: #{$screen-lg-max}) {
+    @content;
+  }
+} // Large devices
+@mixin xl {
+  @media (max-width: #{$screen-xl-max}) {
+    @content;
+  }
+} // Extra large devices
+
+@mixin wrapper {
+  max-width: 1200px;
+  border: 1px solid red;
+  width: 95%;
+  margin: 0 auto;
+}
+@mixin mainhover {
+  color: $white;
+  background: $yellow;
+  &:hover {
+    color: $white;
+    background: $darkblue;
+  }
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  // align-items: baseline;
+}
+
+@mixin favstyle {
+  background-color: $footersearch;
+  color: $white;
+  padding: 1px 5px;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/*
+Use like so:
+A class that will respond differently in different resolutions 
+.sample-padding-class {
+  
+  padding-bottom: 200%; // Default property, this will be applied to all screen sizes
+  color: #FFF;          // Unless overriden below
+  
+  @include sm {         // 576px window width and more
+    padding-bottom: 100%;
+    color: #000;
+  }
+  
+  @include md {         // 768px window width and more
+    padding-bottom: 50%;
+  }
+  
+  @include lg {         // 992px window width and more
+    padding-bottom: 10%;
+  }
+
+  @include xl {         // 1200px window width and more
+    padding-top: 20%;
+    padding-bottom: 0;
+    color: #1337;
+  }
+}
+
+*/

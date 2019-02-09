@@ -1,0 +1,58 @@
+.parallax {
+  background-image: url("https://losangeles.wpresidence.net/wp-content/uploads/2016/08/parallax.jpg");
+  min-height: 300px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100%;
+}
+.parallax-item {
+  padding: 170px 0;
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include lg {
+    border: 1px solid red;
+    padding-left: 40px;
+  }
+  @include md {
+    flex-direction: column;
+  }
+  .number {
+    color: $white;
+    font-size: 5.7rem;
+    line-height: 1.3em;
+    font-weight: 500;
+  }
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    width: 245px;
+    margin-right: 10px;
+    font-size: 18px;
+    @include xl {
+      width: 200px;
+    }
+    @include lg {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}
+.getintouch {
+  background: $darkblue;
+  padding: 2px 0;
+}
+.getintouch-btn {
+  margin-bottom: 40px;
+  &:hover {
+    color: $darkblue;
+    background: $white;
+  }
+}
