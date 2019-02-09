@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 import uuid from "uuid";
+
 import SinglePageRight from "../../../singlePagerightSide/SinglePageRight";
 const Scarousel = lazy(() => import("./SCarousel"));
 const cdata = [
@@ -124,14 +125,14 @@ class SingleListing extends Component {
 
     this.setState({ cdata: updatedCdata });
   };
-
   render() {
     return (
       <React.Fragment>
         <Suspense fallback={<h1>loading</h1>}>
           <Scarousel cdata={cdata} />
         </Suspense>
-        <span className="pathname">need to add pathname here later </span>
+        {/* will need to connect later */}
+        <span>bread crumps here</span>
 
         <div className="singlemain">
           {this.state.cdata.map((i, idx) => {

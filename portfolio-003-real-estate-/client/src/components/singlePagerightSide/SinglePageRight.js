@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import CardInfo from "./CardInfo";
 import styled from "styled-components";
 
 const SinglePageRightStyle = styled.div``;
@@ -11,7 +10,7 @@ class SinglePageRight extends Component {
     return (
       <SinglePageRightStyle>
         {/* card-info */}
-        <CardInfo />
+        cardinfo
         {/* contact card */}
         {/* latest-listing */}
         {/* our listing card */}
