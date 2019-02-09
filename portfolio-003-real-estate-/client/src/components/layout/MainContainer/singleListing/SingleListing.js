@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 import uuid from "uuid";
-
+import SinglePageRight from "../../../singlePagerightSide/SinglePageRight";
 const Scarousel = lazy(() => import("./SCarousel"));
 const cdata = [
   {
@@ -122,7 +122,7 @@ class SingleListing extends Component {
       return x;
     });
 
-    this.setState({ cdata: updatedCdata }, () => console.log(cdata));
+    this.setState({ cdata: updatedCdata });
   };
 
   render() {
@@ -135,7 +135,6 @@ class SingleListing extends Component {
 
         <div className="singlemain">
           {this.state.cdata.map((i, idx) => {
-            console.log("data", i);
             return (
               //parent wrapper
               <div key={idx} className="twosection-parent">
@@ -431,8 +430,7 @@ class SingleListing extends Component {
                 </div>
                 {/* Right Section */}
                 <div className="tsc-second-item">
-                  <h3>Michael Suttherland</h3>
-                  <p>will work on here after i finished left section</p>
+                  <SinglePageRight cdata={this.state.cdata} />
                 </div>
               </div>
             );

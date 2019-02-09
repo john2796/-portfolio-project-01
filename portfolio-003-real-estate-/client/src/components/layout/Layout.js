@@ -17,7 +17,7 @@ const NoMatch = ({ location }) => (
 const Layout = props => {
   return (
     <React.Fragment>
-      <Route path="/" component={Header} />
+      <Header />
       <Route exact path="/" component={Main} />
       <Route path="/listing/:id" component={SingleListing} />
       {/* <Switch>
