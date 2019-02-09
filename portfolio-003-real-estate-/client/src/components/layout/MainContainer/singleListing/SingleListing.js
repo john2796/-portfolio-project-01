@@ -1,8 +1,8 @@
 import React, { Component, lazy, Suspense } from "react";
 import uuid from "uuid";
 
-import SinglePageRight from "../../../singlePagerightSide/SinglePageRight";
 import BreadCrumbs from "./BreadCrumbs";
+import SinglePageRight from "../singlePagerightSide/SinglePageRight";
 const Scarousel = lazy(() => import("./SCarousel"));
 const cdata = [
   {

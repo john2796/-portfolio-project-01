@@ -1,14 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 import {
-  Card,
-  CardBody,
-  CardTitle,
   FormGroup,
   Input,
-  Button
+  Button,
+  Card,
+  CardBody,
+  CardTitle
 } from "reactstrap";
-const ContactPageStyle = styled.div`
+import styled from "styled-components";
+const SearchCardStyle = styled.div`
   input {
     margin: 10px 0;
     font-size: 1.4rem;
@@ -28,25 +28,24 @@ const ContactPageStyle = styled.div`
   }
 `;
 
-const ContactPage = () => {
+const SearchCard = () => {
   return (
-    <ContactPageStyle>
+    <SearchCardStyle>
       <Card>
         <CardBody>
-          <CardTitle>Contact Me</CardTitle>
+          <CardTitle>Advanced Search</CardTitle>
           <form>
-            <Button>Schedule a showing ?</Button>
             <FormGroup />
             <Input type="text" name="Name" placeholder="Your Name" />
             <Input type="text" name="email" placeholder="Your Email" />
             <Input type="text" name="phone" placeholder="Your Phone" />
-            <Input type="textarea" name="text" rows="10" />
-            <Button style={{ padding: "10px 0" }}>SEND EMAIL</Button>
+            <span>More Search Options</span>
+            <Button style={{ padding: "10px 0" }}>SEARCH</Button>
           </form>
         </CardBody>
       </Card>
-    </ContactPageStyle>
+    </SearchCardStyle>
   );
 };
 
-export default ContactPage;
+export default SearchCard;

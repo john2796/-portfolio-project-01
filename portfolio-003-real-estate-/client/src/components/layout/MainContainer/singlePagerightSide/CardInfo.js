@@ -3,12 +3,8 @@ import { Card, CardImg, CardBody, CardTitle } from "reactstrap";
 import styled from "styled-components";
 
 const CardInfoStyle = styled.div`
-  .card {
-    max-width: 260px;
-  }
   .cardinfo-img {
-    max-width: 260px;
-    border-bottom: 2px solid $yellow;
+    border-bottom: 3px solid #fdcc01;
   }
   .icons {
     font-size: 1.5rem;
@@ -16,6 +12,9 @@ const CardInfoStyle = styled.div`
       display: inline-block;
       margin-right: 1.4rem;
       color: #8593a9;
+      &:hover {
+        color: #fdcc01;
+      }
     }
   }
   .subtitle {
@@ -25,6 +24,7 @@ const CardInfoStyle = styled.div`
     margin-bottom: 5px;
   }
   .contactinfo {
+    margin-top: 10px;
     margin-bottom: 25px;
     color: #8593a9;
     font-size: 1.4rem;
