@@ -1,14 +1,17 @@
 import React, { Component } from "react";
+import CardInfo from "./CardInfo";
+import styled from "styled-components";
+
+const SinglePageRightStyle = styled.div``;
 
 class SinglePageRight extends Component {
   render() {
     const { cdata } = this.props;
     console.log("cdata", cdata);
     return (
-      <div>
-        <h1>right page</h1>
+      <SinglePageRightStyle>
         {/* card-info */}
-
+        <CardInfo />
         {/* contact card */}
         {/* latest-listing */}
         {/* our listing card */}
@@ -16,7 +19,7 @@ class SinglePageRight extends Component {
         {/* advanced-search */}
         {/* latest-listing card */}
         {/* mortgage calculator */}
-      </div>
+      </SinglePageRightStyle>
     );
   }
 }
