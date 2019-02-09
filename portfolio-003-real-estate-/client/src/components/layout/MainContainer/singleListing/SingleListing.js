@@ -2,6 +2,7 @@ import React, { Component, lazy, Suspense } from "react";
 import uuid from "uuid";
 
 import SinglePageRight from "../../../singlePagerightSide/SinglePageRight";
+import BreadCrumbs from "./BreadCrumbs";
 const Scarousel = lazy(() => import("./SCarousel"));
 const cdata = [
   {
@@ -132,7 +133,7 @@ class SingleListing extends Component {
           <Scarousel cdata={cdata} />
         </Suspense>
         {/* will need to connect later */}
-        <span>bread crumps here</span>
+        <BreadCrumbs />
 
         <div className="singlemain">
           {this.state.cdata.map((i, idx) => {
