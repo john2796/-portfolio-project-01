@@ -10,7 +10,7 @@ class Routes extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Route path="/" render={props => <Header {...props} />} />
         <Route exact path="/" component={Main} />
         <Route path="/property" component={Properties} />
         <Route path="/listing/:id" component={SingleListing} />

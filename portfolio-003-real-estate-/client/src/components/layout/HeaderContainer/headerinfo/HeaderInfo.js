@@ -4,11 +4,7 @@ import { withRouter } from "react-router-dom";
 const HeaderInfo = props => (
   <div
     className="header-info-flex"
-    style={
-      props.location.pathname === "/"
-        ? { display: "block" }
-        : { display: "none" }
-    }
+    hidden={props.location.pathname === "/" ? false : true}
   >
     <div className="header-info-item">
       <h4 className="header-title ">Los Angeles Experts</h4>
