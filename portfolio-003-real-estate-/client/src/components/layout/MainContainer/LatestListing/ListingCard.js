@@ -47,7 +47,7 @@ class ListingCard extends Component {
       let computedClass =
         index === this.state.activeIndex ? "slide active" : "slide";
       return (
-        <div key={item.src} className={computedClass}>
+        <div key={index} className={computedClass}>
           <div
             className="carousel-parent"
             style={{ backgroundImage: `url(${item.src})`, height: 320 }}

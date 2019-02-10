@@ -1,6 +1,5 @@
 import React, { Component, lazy, Suspense } from "react";
 import { connect } from "react-redux";
-
 const ListingCard = lazy(() => import("./ListingCard"));
 const tabData = ["Apartments", "Houses", "Villas", "Retail", "Land"];
 
@@ -69,9 +68,9 @@ class LatestListing extends Component {
           </nav>
           <div className="listing-flexparent">
             <Suspense fallback={<div>Loading...</div>}>
-              {this.filterData().map(item => {
+              {this.filterData().map((item, idx) => {
                 return (
-                  <div key={item.id} className="listing-card">
+                  <div key={idx} className="listing-card">
                     <ListingCard
                       id={item.id}
                       images={item.images}
