@@ -1,6 +1,7 @@
 import { LOADING, GET_PROPERTY_SUCCESS } from "../actions/propertyActions";
+import {propertydata} from "../../propertiesdata";
 const initialState = {
-  data: [],
+  data: propertydata,
   loading: false
 };
 export default function propertyReducer(state = initialState, action) {
@@ -9,12 +10,6 @@ export default function propertyReducer(state = initialState, action) {
       return {
         ...state,
         loading: true
-      };
-    case GET_PROPERTY_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        data: action.data
       };
     default:
       return state;

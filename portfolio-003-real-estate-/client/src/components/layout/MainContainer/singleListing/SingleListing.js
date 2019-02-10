@@ -97,6 +97,7 @@ const cdata = [
   }
 ];
 
+///the bug with single page Navbar could be because the id changes when you refresh the page
 class SingleListing extends Component {
   constructor(props) {
     super(props);
@@ -104,6 +105,8 @@ class SingleListing extends Component {
       cdata
     };
   }
+
+  //single page tab
   toggle = id => {
     const { cdata } = this.state;
     const updatedCdata = [...cdata];
@@ -123,7 +126,6 @@ class SingleListing extends Component {
       }
       return x;
     });
-
     this.setState({ cdata: updatedCdata });
   };
   render() {
@@ -134,7 +136,6 @@ class SingleListing extends Component {
         </Suspense>
         {/* will need to connect later */}
         <BreadCrumbs />
-
         <div className="singlemain">
           {this.state.cdata.map((i, idx) => {
             return (

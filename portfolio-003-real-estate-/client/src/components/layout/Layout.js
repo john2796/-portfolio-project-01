@@ -5,6 +5,7 @@ import Header from "./HeaderContainer/Header";
 import Main from "./MainContainer/Main";
 import Footer from "./FooterContainer/Footer";
 import SingleListing from "./MainContainer/singleListing/SingleListing";
+import Properties from "../Properties";
 
 const NoMatch = ({ location }) => (
   <div>
@@ -19,10 +20,9 @@ const Layout = props => {
     <React.Fragment>
       <Header />
       <Route exact path="/" component={Main} />
+      <Route path="/property" component={Properties} />
       <Route path="/listing/:id" component={SingleListing} />
-      {/* <Switch>
-        <Route path="*" component={NoMatch} />
-      </Switch> */}
+
       <Footer />
     </React.Fragment>
   );
