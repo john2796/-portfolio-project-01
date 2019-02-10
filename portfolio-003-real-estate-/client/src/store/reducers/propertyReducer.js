@@ -1,8 +1,7 @@
 import { LOADING, GET_PROPERTY_SUCCESS } from "../actions/propertyActions";
 const initialState = {
   data: [],
-  loading: false,
-  errors: {}
+  loading: false
 };
 export default function propertyReducer(state = initialState, action) {
   switch (action.type) {
