@@ -34,8 +34,7 @@ class SinglePageRight extends Component {
         <SocialLinksCard />
         {/* advanced-search */}
         <SearchCard />
-        {/* latest-listing card */}
-        <LatestRightCard />
+
         {/* mortgage calculator */}
         <MorgageCalculator />
       </SinglePageRightStyle>
