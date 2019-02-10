@@ -1,7 +1,15 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 const HeaderInfo = props => (
-  <div className="header-info-flex">
+  <div
+    className="header-info-flex"
+    style={
+      props.location.pathname === "/"
+        ? { display: "block" }
+        : { display: "none" }
+    }
+  >
     <div className="header-info-item">
       <h4 className="header-title ">Los Angeles Experts</h4>
       <p className="header-ptag">
@@ -23,4 +31,4 @@ const HeaderInfo = props => (
   </div>
 );
 
-export default HeaderInfo;
+export default withRouter(HeaderInfo);

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
-class Properties extends Component {
+class Map extends Component {
   render() {
     return (
       <div>
-        <h1>properties data</h1>
+        <h1>map</h1>
       </div>
     );
   }
 }
 
-export default Properties;
+export default Map;
