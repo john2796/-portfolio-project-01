@@ -1,5 +1,6 @@
 import React, { Component, lazy, Suspense } from "react";
 import { connect } from "react-redux";
+import { getPropertyInfo } from "../../../../store/actions/propertyActions";
 const ListingCard = lazy(() => import("./ListingCard"));
 const tabData = ["Apartments", "Houses", "Villas", "Retail", "Land"];
 
@@ -11,6 +12,9 @@ class LatestListing extends Component {
       selected: "Apartments",
       tooltipOpen: false
     };
+  }
+  componentDidMount() {
+    this.props.getPropertyInfo();
   }
 
   filterData = () => {
@@ -94,4 +98,7 @@ const mapStateToProps = state => ({
   cardData: state.listing.cardData
 });
 
-export default connect(mapStateToProps)(LatestListing);
+export default connect(
+  mapStateToProps,
+  { getPropertyInfo }
+)(LatestListing);

@@ -88,6 +88,10 @@ class Footer extends Component {
               <input type="text" placeholder="Type Keyword" />
               <br />
               <button className="secondary-btn search-btn">Search</button>
+              <img
+                src="https://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_200x50.gif"
+                alt="Zillow API Network Branding Logos"
+              />
             </div>
           </div>
           <div className="footer-buyerchoice">
@@ -95,7 +99,18 @@ class Footer extends Component {
               <p>Buyer's Choice</p>
               <div className="prvcy">
                 <p className="first-ptag">Privacy Policy</p>
-                <p>Terms of Use</p>
+                <p style={{ marginLeft: 20 }}>
+                  © Zillow, Inc., 2006-2016. Use is subject to{" "}
+                  <a
+                    href="https://www.zillow.com/corp/Terms.htm"
+                    style={{ marginRight: 20 }}
+                  >
+                    Terms of Use
+                  </a>
+                  <a href="https://www.zillow.com/zestimate/">
+                    What's a Zestimate?
+                  </a>
+                </p>
               </div>
             </nav>
           </div>
