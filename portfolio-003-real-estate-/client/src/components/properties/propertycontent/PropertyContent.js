@@ -6,13 +6,30 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Tooltip
+  Tooltip,
+  Carousel,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselItem
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { getSingleListId } from "../../../store/actions/listingAction";
 import styled from "styled-components";
-const PropertyContentStyle = styled.div``;
-const images = [
+const PropertyContentStyle = styled.div`
+  .property-card {
+    border: 3px solid green;
+    max-width: 300px;
+    margin: 0 3%;
+  }
+  .property-left-arrow {
+    right: 1px;
+  }
+  .property-carousel {
+    border: 5px solid red;
+    height: 300px;
+  }
+`;
+const items = [
   {
     src:
       "https://losangeles.wpresidence.net/wp-content/uploads/2016/03/city_9-1-525x328.jpg"
@@ -27,51 +44,10 @@ const images = [
   }
 ];
 class PropertyContent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      activeIndex: 0
-    };
-  }
-  next = () => {
-    const nextIndex =
-      this.state.activeIndex === images.length - 1
-        ? 0
-        : this.state.activeIndex + 1;
-    this.setState((state, props) => {
-      return { activeIndex: (state.activeIndex = nextIndex) };
-    });
-  };
-  previous = () => {
-    const nextIndex =
-      this.state.activeIndex === 0
-        ? images.length - 1
-        : this.state.activeIndex - 1;
-    this.setState((state, props) => {
-      return { activeIndex: (state.activeIndex = nextIndex) };
-    });
-  };
   render() {
-    const { tooltipOpen, toggle, id } = this.props;
-    if (!images) {
-      return <span>listings currently not available</span>;
-    }
-    const slides = images.map((item, index) => {
-      let computedClass =
-        index === this.state.activeIndex ? "slide active" : "slide";
-      return (
-        <div key={index} className={computedClass}>
-          <div
-            className="carousel-parent"
-            style={{ backgroundImage: `url(${item.src})`, height: 320 }}
-            alt={item.altText}
-          />
-        </div>
-      );
-    });
     return (
       <PropertyContentStyle>
-        <Card>
+        <Card className="property-card">
           <div className="carousel-info-parent">
             <div className="carousel-info">
               <p className="rentals ">Rentals</p>
@@ -86,12 +62,7 @@ class PropertyContent extends Component {
                   add to <br /> favorites
                 </Tooltip>
               </div>
-              <div className="carousel-controls">
-                <i onClick={this.previous} className="fas fa-chevron-left" />
-                <i onClick={this.next} className="fas fa-chevron-right" />
-              </div>
             </div>
-            {slides}
           </div>
           <Link
             to={`/listing/${id}`}
