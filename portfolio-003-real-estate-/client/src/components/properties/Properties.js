@@ -15,7 +15,6 @@ const PropertiesStyle = styled.div`
   .property-right {
     border: 1px solid green;
     width: 40vw;
-    height: 80vh;
   }
 `;
 

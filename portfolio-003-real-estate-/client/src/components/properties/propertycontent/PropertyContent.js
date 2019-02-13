@@ -6,45 +6,41 @@ import {
   CardBody,
   CardTitle,
   CardSubtitle,
-  Tooltip,
-  Carousel,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselItem
+  Tooltip
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { getSingleListId } from "../../../store/actions/listingAction";
 import styled from "styled-components";
+import CardCarousel from "../CardCarousel";
 const PropertyContentStyle = styled.div`
   .property-card {
     border: 3px solid green;
     max-width: 300px;
     margin: 0 3%;
   }
-  .property-left-arrow {
-    right: 1px;
-  }
-  .property-carousel {
-    border: 5px solid red;
-    height: 300px;
+  .card-carousel {
+    max-height: 250px;
+    min-height: 250px;
   }
 `;
-const items = [
-  {
-    src:
-      "https://losangeles.wpresidence.net/wp-content/uploads/2016/03/city_9-1-525x328.jpg"
-  },
-  {
-    src:
-      "https://losangeles.wpresidence.net/wp-content/uploads/2014/05/WPEstateImageAfter1013-525x328.jpg"
-  },
-  {
-    src:
-      "https://losangeles.wpresidence.net/wp-content/uploads/2014/05/WPEstateImageAfter0913-525x328.jpg"
-  }
-];
 class PropertyContent extends Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      tooltipOpen: false
+    };
+  }
+
+  toggle() {
+    this.setState({
+      tooltipOpen: !this.state.tooltipOpen
+    });
+  }
+
   render() {
+    let id = 1;
     return (
       <PropertyContentStyle>
         <Card className="property-card">
@@ -55,13 +51,16 @@ class PropertyContent extends Component {
                 <i className="far fa-heart" id="favorites-heart" />
                 <Tooltip
                   placement="top"
-                  isOpen={tooltipOpen}
+                  isOpen={this.state.tooltipOpen}
                   target="favorites-heart"
-                  toggle={toggle}
+                  toggle={this.toggle}
                 >
                   add to <br /> favorites
                 </Tooltip>
               </div>
+            </div>
+            <div className="card-carousel">
+              <CardCarousel />
             </div>
           </div>
           <Link
