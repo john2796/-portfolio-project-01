@@ -53,7 +53,7 @@ class Properties extends Component {
             <div className="card_container">
               {filterData.map((item, idx) => (
                 <div key={idx}>
-                  <PropertyContent />
+                  <PropertyContent items={item} />
                 </div>
               ))}
             </div>
