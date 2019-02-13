@@ -39,7 +39,7 @@ class MapPage extends Component {
   render() {
     const { initialLocation } = this.state;
     return (
-      <Map center={[33.1605, -117.0978]} zoom={12} width={600} height={865}>
+      <Map center={[33.1605, -117.0978]} zoom={12} width={500} height={865}>
         {this.state.initialLocation.map((marker, index) => {
           return (
             <Marker

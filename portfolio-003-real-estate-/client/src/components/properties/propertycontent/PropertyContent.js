@@ -15,7 +15,7 @@ import CardCarousel from "../CardCarousel";
 const PropertyContentStyle = styled.div`
   .property-card {
     border: 3px solid green;
-    max-width: 300px;
+    max-width: 250px;
     margin: 0 3%;
   }
   .card-carousel {
@@ -110,7 +110,12 @@ class PropertyContent extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  data: state.propertyReducer.data
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { getSingleListId }
 )(PropertyContent);

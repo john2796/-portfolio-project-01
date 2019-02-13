@@ -3,8 +3,7 @@ import {
   Carousel,
   CarouselItem,
   CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
+  CarouselIndicators
 } from "reactstrap";
 
 const items = [
@@ -31,15 +30,12 @@ class CardCarousel extends Component {
     this.onExiting = this.onExiting.bind(this);
     this.onExited = this.onExited.bind(this);
   }
-
   onExiting() {
     this.animating = true;
   }
-
   onExited() {
     this.animating = false;
   }
-
   next() {
     if (this.animating) return;
     const nextIndex =
@@ -48,7 +44,6 @@ class CardCarousel extends Component {
         : this.state.activeIndex + 1;
     this.setState({ activeIndex: nextIndex });
   }
-
   previous() {
     if (this.animating) return;
     const nextIndex =
@@ -57,7 +52,6 @@ class CardCarousel extends Component {
         : this.state.activeIndex - 1;
     this.setState({ activeIndex: nextIndex });
   }
-
   goToIndex(newIndex) {
     if (this.animating) return;
     this.setState({ activeIndex: newIndex });
@@ -74,10 +68,6 @@ class CardCarousel extends Component {
           key={item.src}
         >
           <img src={item.src} alt={item.src} />
-          <CarouselCaption
-            captionText={item.caption}
-            captionHeader={item.caption}
-          />
         </CarouselItem>
       );
     });

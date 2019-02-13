@@ -1,5 +1,5 @@
 import { LOADING, GET_PROPERTY_SUCCESS } from "../actions/propertyActions";
-import {propertydata} from "../../propertiesdata";
+import { propertydata } from "../../propertiesdata";
 const initialState = {
   data: propertydata,
   loading: false
